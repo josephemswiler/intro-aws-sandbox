@@ -1,5 +1,39 @@
 --- !com.amazonaws.mobilehub.v0.Project 
 features:
+  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
+    components:
+      PetAPI: !com.amazonaws.mobilehub.v0.API 
+        attributes:
+          name: PetAPI
+          requires-signin: true
+          sdk-generation-stage-name: Development
+        paths:
+          /pets: !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/PetAPI-20180727093315.zip
+            description: 'Handler for calls to resource path : /pets/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: AU6sNrz80cc/X+YKrE4MvpNpCCKqT/Hvfcz8gcL+I1U=
+            memorySize: '128'
+            modified: '2018-07-27T14:34:11.214+0000'
+            name: PetAPI
+            runtime: nodejs6.10
+            timeout: '3'
+            version: i1senk3kR9I0s0vohCmoDzPa7TsO_tPC
+          '/pets/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
+            codeFilename: uploads/PetAPI-20180727093315.zip
+            description: 'Handler for calls to resource path : /pets/{proxy+}'
+            enableCORS: true
+            environment: {}
+            handler: lambda.handler
+            hashcode: AU6sNrz80cc/X+YKrE4MvpNpCCKqT/Hvfcz8gcL+I1U=
+            memorySize: '128'
+            modified: '2018-07-27T14:34:11.214+0000'
+            name: PetAPI
+            runtime: nodejs6.10
+            timeout: '3'
+            version: Cl26Wdf93CtNF51.KXHbnfpmIMik.M3P
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true
@@ -27,26 +61,5 @@ features:
             require-numbers: true
             require-symbols: true
             require-upper-case: true
-  cloudlogic: !com.amazonaws.mobilehub.v0.CloudLogic 
-    components:
-      PetAPI: !com.amazonaws.mobilehub.v0.API 
-        attributes:
-          name: PetAPI
-          requires-signin: true
-        paths:
-          /pets: !com.amazonaws.mobilehub.v0.Function 
-            name: PetAPI
-            codeFilename: uploads/PetAPI.zip
-            handler: lambda.handler
-            enableCORS: true
-            runtime: nodejs6.10
-            environment: {}
-          '/pets/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            name: PetAPI
-            codeFilename: uploads/PetAPI.zip
-            handler: lambda.handler
-            enableCORS: true
-            runtime: nodejs6.10
-            environment: {}
 name: react-aws-app-2018-07-27-07-31-16
 region: us-west-1

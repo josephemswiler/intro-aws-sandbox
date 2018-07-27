@@ -17,12 +17,14 @@ app.use(bodyParser.json())
 app.use(awsServerlessExpressMiddleware.eventContext())
 
 // Enable CORS for all methods
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*')
+  res.header(
+    'Access-Control-Allow-Headers',
+    'Origin, X-Requested-With, Content-Type, Accept'
+  )
   next()
-});
-
+})
 
 AWS.config.update({ region: process.env.REGION })
 
@@ -30,62 +32,66 @@ AWS.config.update({ region: process.env.REGION })
  * Example get method *
  **********************/
 
-app.get('/pets', function(req, res) {
+app.get('/pets', function (req, res) {
   // Add your code here
+  const pets = ['Buster', 'Mary', 'Spike', 'Pebbles']
+  res.json({
+    data: pets
+  })
   // Return the API Gateway event and query string parameters for example
-  res.json(req.apiGateway.event);
-});
+  // res.json(req.apiGateway.event);
+})
 
-app.get('/pets/*', function(req, res) {
+app.get('/pets/*', function (req, res) {
   // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
+  res.json({ success: 'get call succeed!', url: req.url })
+})
 
 /****************************
 * Example post method *
 ****************************/
 
-app.post('/pets', function(req, res) {
+app.post('/pets', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+})
 
-app.post('/pets/*', function(req, res) {
+app.post('/pets/*', function (req, res) {
   // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
+  res.json({ success: 'post call succeed!', url: req.url, body: req.body })
+})
 
 /****************************
 * Example post method *
 ****************************/
 
-app.put('/pets', function(req, res) {
+app.put('/pets', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
+})
 
-app.put('/pets/*', function(req, res) {
+app.put('/pets/*', function (req, res) {
   // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
+  res.json({ success: 'put call succeed!', url: req.url, body: req.body })
+})
 
 /****************************
 * Example delete method *
 ****************************/
 
-app.delete('/pets', function(req, res) {
+app.delete('/pets', function (req, res) {
   // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
+  res.json({ success: 'delete call succeed!', url: req.url })
+})
 
-app.delete('/pets/*', function(req, res) {
+app.delete('/pets/*', function (req, res) {
   // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
+  res.json({ success: 'delete call succeed!', url: req.url })
+})
 
-app.listen(3000, function() {
-    console.log("App started")
-});
+app.listen(3000, function () {
+  console.log('App started')
+})
 
 // Export the app object. When executing the application local this does nothing. However,
 // to port it to AWS Lambda we will create a wrapper around that will load the app from
