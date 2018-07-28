@@ -1,3 +1,7 @@
 [
-    {}
+    {
+        "id": "{managed-by-awsmobile-cli}:0",
+        "description": null,
+        "expires": 1533402000
+    }
 ]
