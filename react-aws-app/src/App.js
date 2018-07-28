@@ -19,10 +19,16 @@ class App extends Component {
     })
   }
 
+  addToCart = () => {
+    console.log('Simulating adding item to cart.')
+    Analytics.record('Item added to cart!')
+  }
+
   render () {
     return (
       <div className='App'>
         {this.state.pets.map((pet, index) => <h2 key={index}>{pet}</h2>)}
+        <button onClick={this.addToCart}>Add To Cart</button>
       </div>
     )
   }

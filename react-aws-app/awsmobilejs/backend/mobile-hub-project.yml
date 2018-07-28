@@ -9,31 +9,31 @@ features:
           sdk-generation-stage-name: Development
         paths:
           /pets: !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/PetAPI-20180727093315.zip
+            codeFilename: uploads/PetAPI-20180728101555.zip
             description: 'Handler for calls to resource path : /pets/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: AU6sNrz80cc/X+YKrE4MvpNpCCKqT/Hvfcz8gcL+I1U=
+            hashcode: DdLBMLje+2yDS+2RI8XrAcLnurg/wD/LqcPeJuqi4qM=
             memorySize: '128'
-            modified: '2018-07-27T14:34:11.214+0000'
+            modified: '2018-07-28T15:16:45.298+0000'
             name: PetAPI
             runtime: nodejs6.10
             timeout: '3'
-            version: i1senk3kR9I0s0vohCmoDzPa7TsO_tPC
+            version: g4efl2jvzS_xxRsymRmbXMuRrUHAxKpE
           '/pets/{proxy+}': !com.amazonaws.mobilehub.v0.Function 
-            codeFilename: uploads/PetAPI-20180727093315.zip
+            codeFilename: uploads/PetAPI-20180728101555.zip
             description: 'Handler for calls to resource path : /pets/{proxy+}'
             enableCORS: true
             environment: {}
             handler: lambda.handler
-            hashcode: AU6sNrz80cc/X+YKrE4MvpNpCCKqT/Hvfcz8gcL+I1U=
+            hashcode: DdLBMLje+2yDS+2RI8XrAcLnurg/wD/LqcPeJuqi4qM=
             memorySize: '128'
-            modified: '2018-07-27T14:34:11.214+0000'
+            modified: '2018-07-28T15:16:45.298+0000'
             name: PetAPI
             runtime: nodejs6.10
             timeout: '3'
-            version: Cl26Wdf93CtNF51.KXHbnfpmIMik.M3P
+            version: wbr2EOiTieRow4x7EnFHuqz5q7WbQ.pb
   content-delivery: !com.amazonaws.mobilehub.v0.ContentDelivery 
     attributes:
       enabled: true
